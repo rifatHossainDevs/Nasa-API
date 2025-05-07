@@ -52,6 +52,7 @@ dependencies {
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
+    implementation(libs.retrofit.scalars)
 
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)

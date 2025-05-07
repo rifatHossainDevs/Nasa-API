@@ -28,6 +28,7 @@ coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-
 coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines_version" }
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle_version" }
 lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle_version" }
+retrofit-scalars= { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit_version"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
