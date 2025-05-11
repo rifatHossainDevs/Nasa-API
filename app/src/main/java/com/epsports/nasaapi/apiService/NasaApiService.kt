@@ -1,16 +1,16 @@
 package com.epsports.nasaapi.apiService
 
 import com.epsports.nasaapi.model.ResponsePictureOfTheDay
-import com.epsports.nasaapi.utils.Constant.API_KEY
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface NasaApiService {
     @GET("planetary/apod")
     suspend fun getPictureOfTheDay(
-        @retrofit2.http.Query("api_key") apiKey: String
+        @Query("api_key") apiKey: String
     ): Response<ResponsePictureOfTheDay>
 }
 

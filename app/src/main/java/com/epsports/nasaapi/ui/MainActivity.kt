@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import coil.load
 import com.epsports.nasaapi.databinding.ActivityMainBinding
 import com.epsports.nasaapi.viewModel.HomeViewModel
 
@@ -30,14 +31,18 @@ class MainActivity : AppCompatActivity() {
                         tvTitle.text = "Title: ${it.title.toString()}"
                         tvExplanation.text = "Explanation: ${it.explanation.toString()}"
                         btnWatch.setOnClickListener { view ->
-                            val intent = Intent(this@MainActivity, WebViewActivity::class.java)
-                            intent.putExtra("url", it.url)
-                            startActivity(intent)
+                            when (it.mediaType) {
+                                "image" -> {
+                                    binding.ivWatchImage.load(it.url)
+                                }
+                                else -> {
+                                    val intent = Intent(this@MainActivity, WebViewActivity::class.java)
+                                    intent.putExtra("url", it.url)
+                                    startActivity(intent)
+                                }
+                            }
                         }
-
-
                     }
-
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
