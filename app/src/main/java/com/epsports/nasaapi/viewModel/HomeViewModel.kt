@@ -22,7 +22,6 @@ class HomeViewModel : ViewModel() {
         getAsteroidData()
     }
 
-
     private fun getPictureOfTheDay() {
         viewModelScope.launch {
             val response = Service.nasaService.getPictureOfTheDay("WJrfpaXgvTEEpzx5yCjuNanmejvlg9EHbdzi5xsn")
